@@ -18,10 +18,10 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           # role-to-assume: ${{ secrets.AWS_OIDC_ROLE_ARN }}
+          # role-session-name: samplerolesession
           aws_key_id: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
           aws_bucket: ${{ secrets.AWS_BUCKET }}
-          role-session-name: samplerolesession
           aws-region: ${{ env.AWS_REGION }}
       # Upload a file to AWS s3
       - name:  Copy index.html to s3
